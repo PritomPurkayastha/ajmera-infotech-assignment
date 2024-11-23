@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Profile Management Application
+Project Overview
+A React-based Profile Management Application with TypeScript, routing, form validation, and state management.
 
-Currently, two official plugins are available:
+Prerequisites:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Node.js (v14+)
+npm or yarn
 
-## Expanding the ESLint configuration
+Installation:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Clone the repository
 
-- Configure the top-level `parserOptions` property like this:
+git clone [your-repo-url]
+cd profile-management-app
+npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Create a .env file in the root directory:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+VITE_API_BASE_URL_DEV=http://localhost:3001
+VITE_API_BASE_URL_PROD=https://api.production-url.com
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Running the Project:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+npm run dev
+
+This will:
+Start the React app on http://localhost:5173 (default Vite port).
+Start the JSON Server on http://localhost:3001
+
+npm run start:prod (Start in production mode )
+
+Optimizations:
+
+1. Optimized handleCreate with useCallback
+The handleCreate function which is called while creating a profile is wrapped in the useCallback hook to optimize its performance in a React component.
+
+Benefits of useCallback:
+React will only recreate the handleCreate function when its dependencies (formData) change. 
+
+2. useProfile Custom Hook
+The useProfile hook encapsulates the logic for fetching profile information.
+
+
+
+
+
+
+
